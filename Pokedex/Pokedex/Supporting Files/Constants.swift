@@ -9,7 +9,6 @@ import Foundation
 
 struct Constants {
     
-    // https://pokeapi.co/api/v2/pokemon/35/
     struct PokemonURL {
         static let baseURL = "https://pokeapi.co/api/v2/pokemon/"
     }

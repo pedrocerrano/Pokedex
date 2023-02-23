@@ -5,15 +5,15 @@
 //  Created by iMac Pro on 2/23/23.
 //
 
-import Foundation
+import UIKit
 
 class PokemonController {
     
     static func fetchPokemon(searchTerm: String, completion: @escaping (Pokemon?) -> Void) {
-//    https://pokeapi.co/api/v2/pokemon/
+        
         guard let baseURL = URL(string: Constants.PokemonURL.baseURL) else { completion(nil) ; return }
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        urlComponents?.path.append(searchTerm)
+        urlComponents?.path.append(searchTerm.lowercased())
         
         guard let finalPath = urlComponents?.url else { completion(nil) ; return }
         print("Final Pokemon URL: \(finalPath)")
@@ -39,6 +39,30 @@ class PokemonController {
                 print("Unable to retrieve Pokemon data: \(error.localizedDescription)")
                 completion(nil)
             }
+        }.resume()
+    }
+    
+    static func fetchImage(searchTerm: String, completion: @escaping (UIImage?) -> Void) {
+        guard let baseURL = URL(string: Constants.PokemonURL.baseURL) else { completion(nil) ; return }
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.path.append(searchTerm.lowercased())
+        
+        guard let finalPath = urlComponents?.url else { completion(nil) ; return }
+        print("Final Pokemon URL: \(finalPath)")
+        
+        URLSession.shared.dataTask(with: finalPath) { data, response, error in
+            if let error = error {
+                print("Error in Pokemon Image request: \(error.localizedDescription)")
+                completion(nil) ; return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print("Pokemon Image respones Status Code: \(response.statusCode)")
+            }
+            
+            guard let data = data else { completion(nil) ; return }
+            let pokemonImage = UIImage(data: data)
+            completion(pokemonImage)
         }.resume()
     }
 }

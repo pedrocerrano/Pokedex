@@ -8,6 +8,7 @@
 import Foundation
 
 class Pokemon {
+    
     let name: String
     let id: Int
     let moves: [String]
