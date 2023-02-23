@@ -16,10 +16,8 @@ class Pokemon {
     enum Keys: String {
         case name
         case id
-        
         case moves
         case move
-        
         case sprites
         case frontShiny = "front_shiny"
     }
@@ -27,19 +25,16 @@ class Pokemon {
     init?(pokemonDictionary: [String : Any]) {
         guard let name = pokemonDictionary[Keys.name.rawValue] as? String,
               let id = pokemonDictionary[Keys.id.rawValue] as? Int,
-              
               let spriteDictionary = pokemonDictionary[Keys.sprites.rawValue] as? [String : Any],
               let spritePosterPath = spriteDictionary[Keys.frontShiny.rawValue] as? String,
-              
               let movesArray = pokemonDictionary[Keys.moves.rawValue] as? [[String : Any]] else { return nil }
-              
+        
         var moves: [String] = []
-              for dict in movesArray {
-                  guard let moveDictionary = dict[Keys.move.rawValue] as? [String : Any],
-                        let moveName = moveDictionary[Keys.name.rawValue] as? String else { return nil }
-                  
-                  moves.append(moveName)
-              }
+        for dict in movesArray {
+            guard let moveDictionary = dict[Keys.move.rawValue] as? [String : Any],
+                  let moveName = moveDictionary[Keys.name.rawValue] as? String else { return nil }
+            moves.append(moveName)
+        }
         
         self.name = name
         self.id = id
