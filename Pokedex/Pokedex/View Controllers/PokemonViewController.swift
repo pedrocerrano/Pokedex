@@ -24,7 +24,6 @@ class PokemonViewController: UIViewController {
     }
     
     
-    
 } //: CLASS
 
 
