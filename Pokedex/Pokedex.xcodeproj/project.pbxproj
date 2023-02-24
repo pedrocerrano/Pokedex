@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29811DBF29A7FA4100B2116E /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29811DBE29A7FA4100B2116E /* PokemonTableViewCell.swift */; };
 		29811DC129A80DB200B2116E /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29811DC029A80DB200B2116E /* Pokemon.swift */; };
 		29811DC329A81C3F00B2116E /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29811DC229A81C3F00B2116E /* PokemonController.swift */; };
 		29811DC529A81C5E00B2116E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29811DC429A81C5E00B2116E /* Constants.swift */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29811DBE29A7FA4100B2116E /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		29811DC029A80DB200B2116E /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		29811DC229A81C3F00B2116E /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		29811DC429A81C5E00B2116E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -62,14 +60,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		29811DBD29A7FA1100B2116E /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				29811DBE29A7FA4100B2116E /* PokemonTableViewCell.swift */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
 		413CA0F127AB4CC7006D7F15 = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				413CA11527AC41A8006D7F15 /* PokemonViewController.swift */,
-				29811DBD29A7FA1100B2116E /* Custom Views */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -200,7 +189,6 @@
 			files = (
 				29811DC129A80DB200B2116E /* Pokemon.swift in Sources */,
 				413CA0FE27AB4CC7006D7F15 /* AppDelegate.swift in Sources */,
-				29811DBF29A7FA4100B2116E /* PokemonTableViewCell.swift in Sources */,
 				413CA11627AC41A8006D7F15 /* PokemonViewController.swift in Sources */,
 				29811DC529A81C5E00B2116E /* Constants.swift in Sources */,
 				413CA10027AB4CC7006D7F15 /* SceneDelegate.swift in Sources */,

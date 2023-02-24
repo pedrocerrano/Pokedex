@@ -42,14 +42,8 @@ class PokemonController {
         }.resume()
     }
     
-    static func fetchImage(searchTerm: String, completion: @escaping (UIImage?) -> Void) {
-        guard let baseURL = URL(string: Constants.PokemonURL.baseURL) else { completion(nil) ; return }
-        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        urlComponents?.path.append(searchTerm.lowercased())
-        
-        guard let finalPath = urlComponents?.url else { completion(nil) ; return }
-        print("Final Pokemon URL: \(finalPath)")
-        
+    static func fetchImage(forPokemon pokemon: Pokemon, completion: @escaping (UIImage?) -> Void) {
+        guard let finalPath = URL(string: pokemon.spritePath) else { completion(nil) ; return }
         URLSession.shared.dataTask(with: finalPath) { data, response, error in
             if let error = error {
                 print("Error in Pokemon Image request: \(error.localizedDescription)")
